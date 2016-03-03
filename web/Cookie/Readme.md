@@ -45,7 +45,8 @@ String getValue()   //取Cookie值
 ####**2.2.2 使用Cookie管理登录状态**
 保存Cookies:
 ```jsp
-//设置request对象为utf-8
+<%
+    //设置request对象为utf-8
     request.setCharacterEncoding("utf-8");
     //1. 判断用户是否选择了记住登录状态
     String[] isUseCookies = request.getParameterValues("isusecookie");
@@ -77,6 +78,7 @@ String getValue()   //取Cookie值
             }
         }
     }
+%>
 ```
 取出Cookies:
 ```jsp
