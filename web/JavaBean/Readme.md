@@ -3,24 +3,38 @@
 标签（空格分隔）： JavaWeb
 
 ---
+[TOC]
 ##**1. Jsp动作**
 JSP动作元素（action elements）,动作元素为请求处理阶段提供信息。动作元素遵循XML元素语法，有一个包含元素名的开始标签，可以有属性、可选的内容、与开始标签匹配的结束标签。
 ###**1.2 Jsp动作元素分类**
 第一类是与存取JavaBean有关的，包括：
-    <font color=red>&lt;jsp:useBean>&lt;jsp:setProperty>&lt;jsp:getProperty></font>
+
+    <jsp:useBean><jsp:setProperty><jsp:getProperty>
+    
 第二类是JSP1.2就开始有的基本元素，包括6个动作元素
-    &lt;jsp:include>&lt;jsp:forward>&lt;jsp:param>&lt;jsp:plugin>&lt;jsp:params>&lt;jsp:fallback>
+
+    <jsp:include><jsp:forward><jsp:param><jsp:plugin><jsp:params><jsp:fallback>
+    
 第三类是JSP2.0新增加的元素，主要与JSP Document有关，包括六个元素
-    &lt;jsp:root>&lt;jsp:declaration>&lt;jsp:scriptlet>&lt;jsp:expression>&lt;jsp:text>&lt;jsp:output>
+
+    <jsp:root><jsp:declaration><jsp:scriptlet><jsp:expression><jsp:text><jsp:output>
+    
 第四类是JSP2.0新增加的动作元素，主要是用来动态生成XML元素标签的值，包括三个动作
-    &lt;jsp:attribute>&lt;jsp:body>&lt;jsp:element>
+
+    <jsp:attribute><jsp:body><jsp:element>
+    
 第五类是JSP2.0新增的动作元素，主要是用在Tag File中，有2个元素
-    &lt;jsp:invoke>&lt;jsp:dobody>
+
+    <jsp:invoke><jsp:dobody>
 ##**2. JavaBean**
 JavaBean是一个普通的Java类。它有四个设计原则：
+
 1.它是一个私有类
+
 2.有一个无参的公有构造方法
+
 3.属性是私有的
+
 4.属性有Setter和Getter方法
 ###**2.1 在JSP中使用JavaBean**
 和创建普通Java类一样在src目录下创建一个JavaBean类：
@@ -121,8 +135,12 @@ public class Users { //规则1：这个类是公共的
 密码: <jsp:getProperty name="user" property="password"/><br>
 ```
 ####**2.2 scope作用域**
-JavaBean一共有4种作用域范围:page,request,session,application. 根据名字就可知分别在当前页面,当前请求,当前session,当前应用范围内有效.
+JavaBean一共有4种作用域范围:page,request,session,application.
+
+根据名字就可知分别在当前页面,当前请求,当前session,当前应用范围内有效.
+
 具体使用是先在创建JavaBean对象时在scope属性中指明作用范围,在需要使用此对象的地方再次使用相同方式声明JavaBean对象. 如果超出作用范围就会生成一个新的对象.
+
 创建JavaBean对象:
 ```jsp
 <h2>session作用域</h2>
