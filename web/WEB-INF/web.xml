@@ -3,4 +3,61 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    
+    <!--过滤器配置-->
+    <filter>
+        <!--过滤器名称-->
+        <filter-name>SecondFilter</filter-name>
+        <!--过滤器类名字,包括包名-->
+        <filter-class>com.filter.SecondFilter</filter-class>
+        <!--初始化参数,可以有多对-->
+        <!--<init-param>-->
+        <!--描述信息,可省略-->
+        <!--<description></description>-->
+        <!--参数名-->
+        <!--<param-name>namespace</param-name>-->
+        <!--参数值-->
+        <!--<param-value></param-value>-->
+        <!--</init-param>-->
+    </filter>
+    <filter-mapping>
+        <!--和上面filter-name要一致-->
+        <filter-name>SecondFilter</filter-name>
+        <!--需要过滤的URL地址,只有和用户请求的URL匹配才起作用,/*表示任意URL-->
+        <url-pattern>/*</url-pattern>
+        <!--过滤请求类型,可以有多对,取值为REQUEST|INCLUDE|FORWARD|ERROR,默认为REQUEST-->
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+
+    <!--过滤器配置-->
+    <filter>
+        <!--过滤器名称-->
+        <filter-name>FirstFilter</filter-name>
+        <!--过滤器类名字,包括包名-->
+        <filter-class>com.filter.FirstFilter</filter-class>
+        <!--初始化参数,可以有多对-->
+        <!--<init-param>-->
+        <!--描述信息,可省略-->
+        <!--<description></description>-->
+        <!--参数名-->
+        <!--<param-name>namespace</param-name>-->
+        <!--参数值-->
+        <!--<param-value></param-value>-->
+        <!--</init-param>-->
+    </filter>
+    <filter-mapping>
+        <!--和上面filter-name要一致-->
+        <filter-name>FirstFilter</filter-name>
+        <!--需要过滤的URL地址,只有和用户请求的URL匹配才起作用,/*表示任意URL-->
+        <url-pattern>/*</url-pattern>
+        <!--过滤请求类型,可以有多对,取值为REQUEST|INCLUDE|FORWARD|ERROR,默认为REQUEST-->
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
 </web-app>
