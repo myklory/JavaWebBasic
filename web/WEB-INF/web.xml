@@ -60,4 +60,21 @@
         <error-code>404</error-code>
         <location>/error.jsp</location>
     </error-page>
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/servlet/HelloServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletAuto</servlet-name>
+        <servlet-class>servlet.ServletAuto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletAuto</servlet-name>
+        <url-pattern>/servlet/Servlet</url-pattern>
+    </servlet-mapping>
 </web-app>

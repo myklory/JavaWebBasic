@@ -12,5 +12,7 @@
   </head>
   <body>
   Hello, JavaWeb
+  <a href="servlet/Servlet">以Get方式请求Servlet</a>
+  <form action="servlet/HelloServlet" method="post"><input type="submit" value="以Post方式请求Servlet"></form>
   </body>
 </html>
